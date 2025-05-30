@@ -49,7 +49,7 @@
     font-family: "EvilVampire";
     z-index: 5;
 }
-.DungeonButton{
+.dungeonButton{
     position: absolute;
     cursor: pointer;
     top: 650px;
@@ -68,13 +68,13 @@
     box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
     z-index: 5;
 }
-.DungeonButton:hover{
+.dungeonButton:hover{
     color: #fff;
     background-color: rgb(235, 143, 204);
     box-shadow: 0 0 20px rgb(163, 125, 252), 0 0 40px rgb(180, 114, 235);
     transform: scale(1.05);
 }
-.DungeonButton:active{
+.dungeonButton:active{
     transform: scale(0.95);
     background-color: #87c0f0;
     box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
@@ -101,7 +101,7 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
-.DungeonPanel{
+.dungeonPanel{
     position: fixed;
     top: 130px;
     bottom: 0;
@@ -120,18 +120,18 @@
     transition: transform 1s ease, opacity 1s ease;
     overflow-y: auto;
     scrollbar-width: none;
-    z-index: -1;
+    z-index: 20;
 }
-.DungeonPanel::-webkit-scrollbar{ 
+.dungeonPanel::-webkit-scrollbar{ 
     display: none;
 }
-.DungeonPanel.activo{
+.dungeonPanel.activo{
     transform: translateY(0);
     opacity: 1;
+    z-index: 20;
 }
-.DungeonPanel.InfoGame{
-    padding: 10px;
-    
+.dungeonPanel.InfoGame{
+    padding: 10px;  
 }
 .InfoGame{
     font-size: 30px;
@@ -202,8 +202,7 @@
     transform: scale(0.95);
     background-color: #87c0f0;
     box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
-} 
-
+}
 .Close:hover{
     background: #111111;
 }

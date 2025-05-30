@@ -6,6 +6,113 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--LeadedSquare-->
+    <div class="TopSquare"></div>  
+    <!--LeadedName-->
+    <p class="OG-Name">The Rain Company</p> 
+     <!--LeadButtonOption-->
+    <button id="OptionsButton" class="Options-Buttton">
+        <span></span><span></span><span></span>
+    </button>
+    <!--Information panel-->
+    <div id="Panel" class="HidenPanel">
+        <h2>Information</h2>
+        <p class="Information">
+            Contáctame si deseas conocer más de algún proyecto
+            o conocer con más detalle mi trabajo.
+        </p>
+        <p class="Mail">calerayote@gmail.com</p>
+        <p class="Numer">+57 3188926351</p>
+    </div>   
+    <!--Arrows-->
+    <div id="Arrow" class="arrow">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+    </div>
+    <button id="DungeonButton" class="dungeonButton">
+        The infinity Dungeon
+    </button>
+    <!--DungeonInfoPanel-->
+    <div id="DungeonPanel" class="dungeonPanel">
+        <div class="Content">
+            <h2 class="Title">Dungeon Infinity</h2>
+            <p class="InfoGame">
+                The Infinity Dungeon" es un juego que estuve desarrollando como proyecto final. 
+                Tuvo una buena acogida, pero para mí, y comparando con las habilidades que tengo 
+                actualmente, es simplemente un recuerdo de mi primer juego en solitario. El juego 
+                consiste en sobrevivir el mayor tiempo posible mientras mejoras tus armas y armaduras. 
+                Está muy inspirado en juegos como Vampire Survivors y Blasphemous, así como en otros 
+                juegos del estilo de horda con toques de RPG. Una de las características del juego es su 
+                simplicidad en cuanto a mecánicas, pero con diversas interacciones que lo hacen divertido
+            </p>
+        <!--Album-->
+        <div class="Album">
+            <img src="Image/1.png" alt="">
+            <img src="Image/2.png" alt="">
+            <img src="Image/3.png" alt="">
+            <iframe width="900" height="506" 
+                src="https://www.youtube.com/embed/keJhZo0kxKk" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>       
+            <video src="Image/8.mp4" controls></video>
+            <iframe width="900" height="506" 
+                src="https://www.youtube.com/embed/dDKNm5aKIhQ" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe> 
+            <video src="Image/11.mp4" controls></video>  
+            <video src="Image/12.mp4" controls></video>  
+            <img src="Image/13.png" alt="">
+        </div>
+        <!--ClosedButton-->
+        <button id="Close" class="hidenButton">Back</button>
+        </div>
+        <script>
+            const DungeonButton = document.getElementById("DungeonButton");
+            const DungeonPanel = document.getElementById("DungeonPanel");
+            const Close = document.getElementById("Close");
+            const Arrow =document.getElementById("Arrow");
+
+            DungeonButton.addEventListener("click",()=>{
+                DungeonPanel.classList.add("activo");
+                DungeonButton.style.display = "none";
+                Arrow.classList.add("Close");
+                DungeonPanel.scrollTop = 0;
+            });
+
+            DungeonPanel.addEventListener("scroll",()=>{
+                const scrollBotton = DungeonPanel.scrollHeight- DungeonPanel.scrollTop === DungeonPanel.clientHeight;
+                if(scrollBotton){
+                    DungeonPanel.classList.add("mostrar-close");
+                }
+            });
+
+            Close.addEventListener("click", () => {
+                DungeonPanel.classList.remove("activo", "mostrar-close");
+             setTimeout(() => {
+                DungeonButton.style.display = "block";
+                Arrow.classList.remove("Close");
+            }, 700);
+            });
+        </script>
+    </div>  
+   <!--FishiLife-->
+    <div id="FishiLife">
+        <button id="FishiLifeButton" class="FishiLifeButton">
+            FishiLife
+        </button>
+    </div>
+    <script>
+        const boton = document.getElementById('OptionsButton');
+        const panel = document.getElementById('Panel');
+
+        boton.addEventListener('click', () => {
+            panel.classList.toggle('activo');
+        });
+    </script>
     <!--BackGround-->
     <div class="BackGround">
         <script>
@@ -84,108 +191,6 @@
     <div id="VideoBackGround">
         <video id="VideoA" class="Bg-video" autoplay muted loop></video>
         <video id="VideoB" class="Bg-video next" muted loop></video>
-    </div>
-     <!--Information panel-->
-    <div id="Panel" class="HidenPanel">
-        <h2>Information</h2>
-        <p class="Information">
-            Contáctame si deseas conocer más de algún proyecto
-            o conocer con más detalle mi trabajo.
-        </p>
-        <p class="Mail">calerayote@gmail.com</p>
-        <p class="Numer">+57 3188926351</p>
-    </div>
-    <!--LeadButtonOption-->
-    <button id="OptionsButton" class="Options-Buttton">
-        <span></span><span></span><span></span>
-    </button>
-    <script>
-        const boton = document.getElementById('OptionsButton');
-        const panel = document.getElementById('Panel');
-
-        boton.addEventListener('click', () => {
-            panel.classList.toggle('activo');
-        });
-    </script>
-
-    <!--LeadedName-->
-    <p class="OG-Name">The Rain Company</p>
-    
-    <!--LeadedSquare-->
-    <div class="TopSquare"></div>  
-
-    <!--Duengeon-->
-    <div id="Arrow" class="arrow">
-        <div class="arrow-top"></div>
-        <div class="arrow-bottom"></div>
-    </div>
-    <button id="DungeonButton" class="DungeonButton">
-        The infinity Dungeon
-    </button>
-    <div id="DungeonPanel" class="DungeonPanel">
-        <div class="Content">
-            <h2 class="Title">Dungeon Infinity</h2>
-            <p class="InfoGame">
-                The Infinity Dungeon" es un juego que estuve desarrollando como proyecto final. 
-                Tuvo una buena acogida, pero para mí, y comparando con las habilidades que tengo 
-                actualmente, es simplemente un recuerdo de mi primer juego en solitario. El juego 
-                consiste en sobrevivir el mayor tiempo posible mientras mejoras tus armas y armaduras. 
-                Está muy inspirado en juegos como Vampire Survivors y Blasphemous, así como en otros 
-                juegos del estilo de horda con toques de RPG. Una de las características del juego es su 
-                simplicidad en cuanto a mecánicas, pero con diversas interacciones que lo hacen divertido
-            </p>
-            <!--Album-->
-            <div class="Album">
-                <img src="Image/1.png" alt="">
-                <img src="Image/2.png" alt="">
-                <img src="Image/3.png" alt="">
-                <img src="Image/4.png" alt="">
-                <img src="Image/5.png" alt="">
-                <video src="Image/7.mp4" controls></video>        
-                <video src="Image/8.mp4" controls></video>
-                <video src="Image/10.mp4" controls></video>  
-                <video src="Image/11.mp4" controls></video>  
-                <video src="Image/12.mp4" controls></video>  
-                <img src="Image/13.png" alt="">
-            </div>
-            <!--ClosedButton-->
-            <button id="Close" class="hidenButton">Back</button>
-        </div>
-        <script>
-            const DungeonButton = document.getElementById("DungeonButton");
-            const DungeonPanel = document.getElementById("DungeonPanel");
-            const Close = document.getElementById("Close");
-            const Arrow =document.getElementById("Arrow");
-
-            DungeonButton.addEventListener("click",()=>{
-                DungeonPanel.classList.add("activo");
-                DungeonButton.style.display = "none";
-                Arrow.classList.add("Close");
-                DungeonPanel.scrollTop = 0;
-            });
-
-            DungeonPanel.addEventListener("scroll",()=>{
-                const scrollBotton = DungeonPanel.scrollHeight- DungeonPanel.scrollTop === DungeonPanel.clientHeight;
-                if(scrollBotton){
-                    DungeonPanel.classList.add("mostrar-close");
-                }
-            });
-
-            Close.addEventListener("click", () => {
-                DungeonPanel.classList.remove("activo", "mostrar-close");
-             setTimeout(() => {
-                DungeonButton.style.display = "block";
-                Arrow.classList.remove("Close");
-            }, 700);
-            });
-        </script>
-    </div>
-
-    <!--FishiLife-->
-    <div id="FishiLife">
-        <button id="FishiLifeButton" class="FishiLifeButton">
-            FishiLife
-        </button>
     </div>
 </body>
 </html>
