@@ -1,0 +1,294 @@
+@font-face{
+    font-family: "EvilVampire";
+    src: url("Fonts/EvilVampire-Regular.ttf") format('truetype');
+    font-family: "FriendlySans";
+    src: url("Fonts/FriendlySans-Regular.ttf") format('truetype');
+    font-family: "Unageo";
+    src: url("Fonts/Unageo-Regular.ttf") format('truetype');
+}
+.TopSquare{
+    position: absolute;
+    top: 1px;
+    margin-bottom: 500px;
+    margin-right: 50px;
+    width: 1420px;
+    height: 130px;
+    background-color: rgb(85, 85, 85);
+    opacity: 0.50;
+    z-index: 1;
+}
+.Options-Buttton{
+    display: flex;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;  
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    z-index: 2;
+}
+.Options-Buttton span {
+    width: 10;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(163, 163, 163);    
+    border-radius: 15px;
+}
+.OG-Name{
+    color: rgb(255, 255, 255);    
+    text-align: left;
+    margin-left: 50px;
+    font-weight: bold;
+    margin-top: 45px;
+    font-size: 40px;
+    font-family: "EvilVampire";
+    z-index: 5;
+}
+.DungeonButton{
+    position: absolute;
+    cursor: pointer;
+    top: 650px;
+    right: 620px;
+    display: inline-block;
+    padding: 15px 30px;
+    color: rgb(233, 233, 233);
+    background-color: transparent;
+    border: 2px solid rgb(206, 103, 247);
+    text-decoration: none;
+    font-family: "EvilVampire";
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
+    z-index: 5;
+}
+.DungeonButton:hover{
+    color: #fff;
+    background-color: rgb(235, 143, 204);
+    box-shadow: 0 0 20px rgb(163, 125, 252), 0 0 40px rgb(180, 114, 235);
+    transform: scale(1.05);
+}
+.DungeonButton:active{
+    transform: scale(0.95);
+    background-color: #87c0f0;
+    box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
+}
+.HidenPanel{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    font-family: "FriendlySans";
+    background-color: #111111;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(141, 179, 98, 0.5);
+    width: 500px;
+    text-align: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 99;
+}
+.HidenPanel.activo{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+.DungeonPanel{
+    position: fixed;
+    top: 130px;
+    bottom: 0;
+    left: 100px;
+    right: 0;
+    width: 1200px;
+    height: 665px;
+    background: linear-gradient(to right, 
+            rgba(250, 133, 221, 0.021) 0%, 
+            rgba(171, 153, 175, 0.671) 5%, 
+            rgb(171, 153, 175, 0.671) 95%, 
+            rgba(250, 133, 221, 0.021) 100%);
+    color: white;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    overflow-y: auto;
+    scrollbar-width: none;
+    z-index: -1;
+}
+.DungeonPanel::-webkit-scrollbar{ 
+    display: none;
+}
+.DungeonPanel.activo{
+    transform: translateY(0);
+    opacity: 1;
+}
+.DungeonPanel.InfoGame{
+    padding: 10px;
+    
+}
+.InfoGame{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 100px ;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.Title{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 100px ;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.Album{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Album img, .Album video{
+    width: 900px;
+    border-radius: 10px;
+}
+.Close{
+    margin-top: 40px;
+    background: #0ff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    display: none;
+}
+.hidenButton{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    padding: 20px 90px;
+    color: rgb(233, 233, 233);
+    background-color: transparent;
+    border: 2px solid rgb(206, 103, 247);
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
+    z-index: 5;
+}
+.hidenButton:hover{
+    color: #fff;
+    background-color: rgb(235, 143, 204);
+    box-shadow: 0 0 20px rgb(163, 125, 252), 0 0 40px rgb(180, 114, 235);
+    transform: scale(1.05);
+}
+.hidenButton:active{
+    transform: scale(0.95);
+    background-color: #87c0f0;
+    box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
+} 
+
+.Close:hover{
+    background: #111111;
+}
+.DungeonPanel.mostrar-close .Close{
+    display: block;
+}
+.Bg-video{
+    position: fixed;
+    width: 1990px;
+    top: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: -1;
+    object-fit: cover;
+    transition: opacity 1s ease, transform 1s ease;
+}
+.Bg-video.next{
+    z-index: -1;
+    transform: translateX(100%);
+    opacity: 0;
+}
+.arrow {
+  cursor: pointer;
+  height: 60px;
+  right: 1%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 50px;
+}
+.arrow-top, .arrow-bottom {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-top:after, .arrow-bottom:after {
+  background-color: #ffffff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+#DungeonButton, #FishiLifeButton{
+    display: none;
+}
