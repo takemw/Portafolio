@@ -254,10 +254,10 @@
     width: 1200px;
     height: 665px;
     background: linear-gradient(to right, 
-            rgba(250, 133, 221, 0.021) 0%, 
-            rgba(171, 153, 175, 0.671) 5%, 
-            rgb(171, 153, 175, 0.671) 95%, 
-            rgba(250, 133, 221, 0.021) 100%);
+            rgba(175, 175, 175, 0.021) 0%, 
+            rgba(109, 253, 205, 0.671) 5%, 
+            rgba(109, 253, 205, 0.671) 95%, 
+            rgba(175, 175, 175, 0.021) 100%);
     color: white;
     transform: translateY(100%);
     opacity: 0;
@@ -274,8 +274,14 @@
     opacity: 1;
     z-index: 20;
 }
-.InfoFishingGame.InfoGame{
-    padding: 10px;  
+.InfoFishingGame{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 100px ;
+    margin-left: 100px;
+    margin-top: 50px;  
 }
 .TitleFish{
     color: black;
@@ -286,17 +292,41 @@
     margin-left: 100px;
     margin-top: 100px;
 }
+.carousel-Track{
+    margin-top: 50px;
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+.carousel-Track ::-webkit-scrollbar{
+    width: 10px;
+}
+.carousel-Track ::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+.carousel-Track ::-webkit-scrollbar-thumb{
+    background: #888;
+}
+.carousel-Track ::-webkit-scrollbar-thumb:hover{
+    background: #555; 
+}
 .AlbumFishing {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
     gap: 10px;
-    justify-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    height: 100%;
+    padding: 10px;
 }
 .AlbumFishing img {
-    width: 100%;
-    height: auto;
+    height: 500px;
+    width: auto;
     object-fit: cover;
     border-radius: 10px;
+    flex-shrink: 0;
 }
 .CloseFishing{
     margin-top: 40px;
@@ -315,9 +345,9 @@
     margin-bottom: 20px;
     margin-left: 40%;
     padding: 20px 90px;
-    color: rgb(233, 233, 233);
-    background-color: transparent;
-    border: 2px solid rgb(206, 103, 247);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.452);
+    border: 2px solid rgb(234, 247, 123);
     text-decoration: none;
     font-family: sans-serif;
     text-transform: uppercase;
@@ -325,19 +355,19 @@
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
+    box-shadow: 0 0 10px rgb(182, 255, 153), 0 0 20px rgb(248, 207, 119);
     z-index: 5;
 }
 .hidenFishingButton:hover{
     color: #fff;
-    background-color: rgb(235, 143, 204);
-    box-shadow: 0 0 20px rgb(163, 125, 252), 0 0 40px rgb(180, 114, 235);
+    background-color: rgb(93, 236, 177);
+    box-shadow: 0 0 20px rgb(133, 230, 68), 0 0 40px rgb(255, 153, 94);
     transform: scale(1.05);
 }
 .hidenFishingButton:active{
     transform: scale(0.95);
-    background-color: #87c0f0;
-    box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
+    background-color: rgb(93, 223, 255);;
+    box-shadow: 0 0 10px #ebee58, 0 0 20px #ffb546;
 }
 .CloseFishing:hover{
     background: #111111;
