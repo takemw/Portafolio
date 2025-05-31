@@ -8,14 +8,25 @@
 }
 .TopSquare{
     position: absolute;
-    top: 1px;
+    top: 0;
+    left: 0;
     margin-bottom: 500px;
-    margin-right: 50px;
-    width: 1420px;
+    width: 1439px;
     height: 130px;
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(94, 93, 93);
     opacity: 0.50;
-    z-index: 1;
+    z-index: 0;
+}
+.OG-Name{
+    position: relative;
+    color: rgb(255, 255, 255);    
+    text-align: left;
+    margin-left: 50px;
+    font-weight: bold;
+    margin-top: 45px;
+    font-size: 40px;
+    font-family: "EvilVampire";
+    z-index: 99;
 }
 .Options-Buttton{
     display: flex;
@@ -30,25 +41,38 @@
     background-color: transparent;
     border: none;
     padding: 5px;
-    z-index: 2;
+    z-index: 99;
 }
 .Options-Buttton span {
     width: 10;
     height: 50px;
     cursor: pointer;
-    background-color: rgb(163, 163, 163);    
+    background-color: rgb(255, 255, 255);    
     border-radius: 15px;
 }
-.OG-Name{
-    color: rgb(255, 255, 255);    
-    text-align: left;
-    margin-left: 50px;
-    font-weight: bold;
-    margin-top: 45px;
-    font-size: 40px;
-    font-family: "EvilVampire";
-    z-index: 5;
+.HidenPanel{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    font-family: "FriendlySans";
+    background-color: #111111;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(141, 179, 98, 0.5);
+    width: 500px;
+    text-align: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 99;
 }
+.HidenPanel.activo{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
 .dungeonButton{
     position: absolute;
     cursor: pointer;
@@ -79,28 +103,7 @@
     background-color: #87c0f0;
     box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
 }
-.HidenPanel{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transform-origin: center;
-    font-family: "FriendlySans";
-    background-color: #111111;
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(141, 179, 98, 0.5);
-    width: 500px;
-    text-align: center;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-    z-index: 99;
-}
-.HidenPanel.activo{
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
+
 .dungeonPanel{
     position: fixed;
     top: 130px;
@@ -209,6 +212,141 @@
 .DungeonPanel.mostrar-close .Close{
     display: block;
 }
+
+
+.fishiLifeButton{
+    position: absolute;
+    cursor: pointer;
+    top: 630px;
+    right: 620px;
+    display: inline-block;
+    padding: 15px 60px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.452);
+    border: 2px solid rgb(234, 247, 123);
+    text-decoration: none;
+    font-family: "EvilVampire";
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(182, 255, 153), 0 0 20px rgb(248, 207, 119);
+    z-index: 5;
+}
+.fishiLifeButton:hover{
+    color: #fff;
+    background-color: rgb(93, 236, 177);
+    box-shadow: 0 0 20px rgb(133, 230, 68), 0 0 40px rgb(255, 153, 94);
+    transform: scale(1.05);
+}
+.fishiLifeButton:active{
+    transform: scale(0.95);
+    background-color: rgb(93, 223, 255);;
+    box-shadow: 0 0 10px #ebee58, 0 0 20px #ffb546;
+}
+.fishnigPanel{
+    position: fixed;
+    top: 130px;
+    bottom: 0;
+    left: 100px;
+    right: 0;
+    width: 1200px;
+    height: 665px;
+    background: linear-gradient(to right, 
+            rgba(250, 133, 221, 0.021) 0%, 
+            rgba(171, 153, 175, 0.671) 5%, 
+            rgb(171, 153, 175, 0.671) 95%, 
+            rgba(250, 133, 221, 0.021) 100%);
+    color: white;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    overflow-y: auto;
+    scrollbar-width: none;
+    z-index: 20;
+}
+.fishnigPanel::-webkit-scrollbar{ 
+    display: none;
+}
+.fishnigPanel.activo{
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 20;
+}
+.InfoFishingGame.InfoGame{
+    padding: 10px;  
+}
+.TitleFish{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 100px ;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.AlbumFishing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+.AlbumFishing img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.CloseFishing{
+    margin-top: 40px;
+    background: #0ff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    display: none;
+}
+.hidenFishingButton{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    padding: 20px 90px;
+    color: rgb(233, 233, 233);
+    background-color: transparent;
+    border: 2px solid rgb(206, 103, 247);
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
+    z-index: 5;
+}
+.hidenFishingButton:hover{
+    color: #fff;
+    background-color: rgb(235, 143, 204);
+    box-shadow: 0 0 20px rgb(163, 125, 252), 0 0 40px rgb(180, 114, 235);
+    transform: scale(1.05);
+}
+.hidenFishingButton:active{
+    transform: scale(0.95);
+    background-color: #87c0f0;
+    box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
+}
+.CloseFishing:hover{
+    background: #111111;
+}
+.fishnigPanel.mostrar-close .Close{
+    display: block;
+}
+
+
 .Bg-video{
     position: fixed;
     width: 1990px;
@@ -223,6 +361,38 @@
     z-index: -1;
     transform: translateX(100%);
     opacity: 0;
+}
+#imageElement {
+   position: fixed;
+    width: 1450px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+    transition: opacity 1s ease, transform 1s ease;
+}
+.slide-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 .arrow {
   cursor: pointer;

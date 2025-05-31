@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="LeadedStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!--LeadedSquare-->
-    <div class="TopSquare"></div>  
+<body> 
     <!--LeadedName-->
     <p class="OG-Name">The Rain Company</p> 
+    <!--LeadedSquare-->
+    <div class="TopSquare"></div>   
      <!--LeadButtonOption-->
     <button id="OptionsButton" class="Options-Buttton">
         <span></span><span></span><span></span>
@@ -39,13 +39,19 @@
         <div class="Content">
             <h2 class="Title">Dungeon Infinity</h2>
             <p class="InfoGame">
-                The Infinity Dungeon" es un juego que estuve desarrollando como proyecto final. 
-                Tuvo una buena acogida, pero para mí, y comparando con las habilidades que tengo 
-                actualmente, es simplemente un recuerdo de mi primer juego en solitario. El juego 
-                consiste en sobrevivir el mayor tiempo posible mientras mejoras tus armas y armaduras. 
-                Está muy inspirado en juegos como Vampire Survivors y Blasphemous, así como en otros 
-                juegos del estilo de horda con toques de RPG. Una de las características del juego es su 
-                simplicidad en cuanto a mecánicas, pero con diversas interacciones que lo hacen divertido
+                "The Infinity Dungeon" es un videojuego que desarrollé como proyecto final, 
+                y aunque fue bien recibido, hoy lo veo como un recuerdo valioso de mi primer 
+                trabajo en solitario. Comparado con las habilidades que he adquirido desde entonces, 
+                representa el punto de partida de mi evolución como desarrollador.
+
+                El objetivo del juego es simple: sobrevivir el mayor tiempo posible mientras mejoras 
+                tus armas y armaduras. Está fuertemente inspirado en títulos como Vampire Survivors y 
+                Blasphemous, así como en otros juegos del género horda con elementos de RPG.
+
+                Una de sus principales fortalezas radica en la sencillez de sus mecánicas, combinada 
+                con múltiples interacciones que mantienen la experiencia fresca y entretenida. 
+                A pesar de su simplicidad, The Infinity Dungeon logra captar la atención del jugador 
+                gracias a su dinamismo y ritmo constante.
             </p>
         <!--Album-->
         <div class="Album">
@@ -101,12 +107,75 @@
             });
         </script>
     </div>  
-   <!--FishiLife-->
+    <!--FishiLife-->
     <div id="FishiLife">
-        <button id="FishiLifeButton" class="FishiLifeButton">
-            FishiLife
+        <button id="FishiLifeButton" class="fishiLifeButton">
+            Fishing Life
         </button>
     </div>
+    <!--FishigPanel-->
+    <div id="FishingPanel" class="fishnigPanel">
+        <div class="ContentFishing">
+            <h2 class="TitleFish">Fishing Life</h2>
+            <p class="InfoFishingGame">
+                Fishing Life fue concebido como una propuesta 
+                lúdica con un trasfondo crítico. Su diseño parte 
+                de una mecánica de recolección en la que, en lugar 
+                de peces, el jugador captura residuos presentes en el océano. 
+                Esta dinámica busca visibilizar el impacto ambiental del desecho humano. 
+                A nivel de gameplay, la acción se recompensa con monedas, introduciendo un 
+                matiz irónico que refuerza el mensaje ecológico subyacente.
+            </p>
+        </div>
+        <!--Album-->
+        <div class="AlbumFishing">
+            <img src="Image/FishGame/1.png" alt="">
+            <img src="Image/FishGame/2.png" alt="">
+            <img src="Image/FishGame/3.png" alt="">
+            <img src="Image/FishGame/4.png" alt="">
+            <img src="Image/FishGame/5.png" alt="">
+            <img src="Image/FishGame/6.png" alt="">
+            <img src="Image/FishGame/7.png" alt="">
+            <img src="Image/FishGame/8.png" alt="">
+            <img src="Image/FishGame/9.png" alt="">
+            <img src="Image/FishGame/10.png" alt="">
+            <img src="Image/FishGame/11.png" alt="">
+            <img src="Image/FishGame/12.png" alt="">
+            
+        </div>     
+        <!--ClosedButton-->
+        <button id="CloseFishing" class="hidenFishingButton">Back</button>
+        <div>
+            <script>
+                const FishiLifeButton = document.getElementById("FishiLifeButton");
+                const FishingPanel = document.getElementById("FishingPanel");
+                const CloseFishing = document.getElementById("CloseFishing");
+
+                FishiLifeButton.addEventListener("click",()=>{
+                    FishingPanel.classList.add("activo");
+                    FishiLifeButton.style.display = "none";
+                    Arrow.classList.add("Close");
+                    FishingPanel.scrollTop = 0;
+                });
+
+                FishingPanel.addEventListener("scroll",()=>{
+                    const scrollBotton = FishingPanel.scrollHeight- FishingPanel.scrollTop === FishingPanel.clientHeight;
+                    if(scrollBotton){
+                        FishingPanel.classList.add("mostrar-close");
+                    }
+                });
+
+                CloseFishing.addEventListener("click", () => {
+                    FishingPanel.classList.remove("activo", "mostrar-close");
+                 setTimeout(() => {
+                    FishiLifeButton.style.display = "block";
+                    Arrow.classList.remove("Close");
+                }, 700);
+                });
+            </script>
+        </div>
+    </div>
+    <!--OpctionPanel-->
     <script>
         const boton = document.getElementById('OptionsButton');
         const panel = document.getElementById('Panel');
@@ -118,8 +187,28 @@
     <!--BackGround-->
     <div class="BackGround">
         <script>
+            window.onload = function () {
+            const videoList = [
+                "Videos/45.mp4",
+                "Image/FishGame/A.png",
+            ];
+
+            let currentIndex = 0;
+            let isTransitioning = false;
+
+            const videoA = document.getElementById("VideoA");
+            const videoB = document.getElementById("VideoB");
+            const imageElement = document.getElementById("imageElement");
+            const ArrowRight = document.getElementById("Arrow");
+
+            let currentVideo = videoA;
+            let nextVideo = videoB;
+
+            function isVideo(file) {
+                return file.endsWith(".mp4") || file.endsWith(".webm");
+            }
+
             function updateButtons(index) {
-                const dungeonPanelActive = document.getElementById("DungeonPanel").classList.contains("activo");
                 document.getElementById("DungeonButton").style.display = "none";
                 document.getElementById("FishiLifeButton").style.display = "none";
 
@@ -127,72 +216,115 @@
                     document.getElementById("DungeonButton").style.display = "block";
                 } else if (index === 1) {
                     document.getElementById("FishiLifeButton").style.display = "block";
-                }  
+                }
             }
-            window.onload = function() {
-                const videoList =[ 
-                    "Videos/45.mp4",
-                    "Videos/11.mp4",
-                    "Videos/12.mp4"
-                ];
 
-            let currentIndex = 0;
-            let isTransitioning = false;
+            function updateMedia(index) {
+                const src = videoList[index];
 
-            const videoA = document.getElementById("VideoA");
-            const videoB = document.getElementById("VideoB");
-            const ArrowRight = document.getElementById("Arrow");
+                // Reset visibility
+                videoA.style.display = "none";
+                videoB.style.display = "none";
+                imageElement.style.display = "none";
 
-            let currentVideo = videoA;
-            let nextVideo = videoB;
+                // Reset classes
+                videoA.className = "Bg-video";
+                videoB.className = "Bg-video next";
+                imageElement.className = "";
 
-            // Cargar el primer video
-            currentVideo.src = videoList[currentIndex];
-            currentVideo.load();
-            currentVideo.play();
-            updateButtons(currentIndex);
+                if (isVideo(src)) {
+                    currentVideo = videoA;
+                    nextVideo = videoB;
 
-            function switchVideo(direction) {
+                    currentVideo.src = src;
+                    currentVideo.load();
+                    currentVideo.play();
+                    currentVideo.style.display = "block";
+                } else {
+                    imageElement.src = src;
+                    imageElement.classList.add("slide-image");
+                    imageElement.style.display = "block";
+
+                    videoA.pause();
+                    videoB.pause();
+                }
+
+                updateButtons(index);
+            }
+
+           function switchVideo(direction) {
                 if (isTransitioning) return;
                 isTransitioning = true;
-            
+
                 if (direction === 'next') {
                     currentIndex = (currentIndex + 1) % videoList.length;
                 } else if (direction === 'prev') {
                     currentIndex = (currentIndex - 1 + videoList.length) % videoList.length;
                 }
+            
+                const src = videoList[currentIndex];
                 updateButtons(currentIndex);
-
-                // Preparar el video siguiente
-                nextVideo.src = videoList[currentIndex];
+            
+                // Si es imagen: mostrar con animación, ocultar videos
+                if (!isVideo(src)) {
+                    videoA.pause();
+                    videoB.pause();
+                    videoA.style.display = "none";
+                    videoB.style.display = "none";
+                
+                    imageElement.src = src;
+                    imageElement.className = "slide-image";
+                    imageElement.style.display = "block";
+                
+                    isTransitioning = false;
+                    return;
+                }
+            
+                // Si es video: ocultar imagen y hacer transición
+                imageElement.style.display = "none";
+                imageElement.className = "";
+            
+                // Determinar cuál es el current y next correctamente
+                if (currentVideo === videoA) {
+                    currentVideo = videoA;
+                    nextVideo = videoB;
+                } else {
+                    currentVideo = videoB;
+                    nextVideo = videoA;
+                }
+            
+                nextVideo.src = src;
                 nextVideo.load();
                 nextVideo.play();
-
-                // Animar transición
+            
+                nextVideo.style.display = "block";
                 nextVideo.style.transform = "translateX(0)";
                 nextVideo.style.opacity = "1";
+            
                 currentVideo.style.opacity = "0";
             
                 setTimeout(() => {
-                    // Resetear posiciones
                     const temp = currentVideo;
                     currentVideo = nextVideo;
                     nextVideo = temp;
                 
                     nextVideo.style.transform = "translateX(100%)";
                     nextVideo.style.opacity = "0";
+                    nextVideo.style.display = "none";
                 
                     isTransitioning = false;
                 }, 1000);
             }
+            updateMedia(currentIndex);
             ArrowRight.addEventListener("click", () => switchVideo("next"));
-         };
-        </script>
+        };
+    </script>
     </div>
     <!--BackGroundVideo-->
     <div id="VideoBackGround">
         <video id="VideoA" class="Bg-video" autoplay muted loop></video>
         <video id="VideoB" class="Bg-video next" muted loop></video>
+        <img id="imageElement" alt="Background image" />
     </div>
 </body>
 </html>
