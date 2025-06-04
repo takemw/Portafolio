@@ -1,0 +1,131 @@
+@font-face{
+    font-family: "EvilVampire";
+    src: url("../Fonts/EvilVampire-Regular.ttf");
+}
+.TopSquare{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 500px;
+    width: 1439px;
+    height: 130px;
+    background-color: rgb(94, 93, 93);
+    opacity: 0.50;
+    z-index: 0;
+}
+.OG-Name{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: -20px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 60px;
+    font-family: "EvilVampire";
+    z-index: 99;
+}
+.Options-Button{
+    display: flex;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;  
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    z-index: 99;
+}
+.Options-Button span {
+    width: 10;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);    
+    border-radius: 15px;
+}
+.HidenPanel{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    font-family: "FriendlySans";
+    background-color: #111111;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(141, 179, 98, 0.5);
+    width: 500px;
+    text-align: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 99;
+}
+.HidenPanel.activo{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+.arrow {
+  cursor: pointer;
+  height: 60px;
+  right: 1%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 50px;
+}
+.arrow-top, .arrow-bottom {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.arrow-top:after, .arrow-bottom:after {
+  background-color: #ffffff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}

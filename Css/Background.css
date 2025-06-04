@@ -1,0 +1,53 @@
+@font-face{
+    font-family: "EvilVampire";
+    src: url("/Fonts/EvilVampire-Regular.ttf") format('truetype');
+}
+.Bg-video{
+    position: fixed;
+    width: 1990px;
+    top: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: -1;
+    object-fit: cover;
+    transition: opacity 1s ease, transform 1s ease;
+}
+.Bg-video.next{
+    z-index: -1;
+    transform: translateX(100%);
+    opacity: 0;
+}
+#imageElement {
+   position: fixed;
+    width: 1450px;
+    top: -200px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+    transition: opacity 1s ease, transform 1s ease;
+}
+.slide-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+#DungeonButton, #FishiLifeButton{
+    display: none;
+}

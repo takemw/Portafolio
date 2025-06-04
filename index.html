@@ -1,332 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="LeadedStyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE RAIN COMPANY</title>
+  <link rel="stylesheet" href="css/Main.css" />
+  <link rel="stylesheet" href="css/Background.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body> 
-    <!--LeadedName-->
-    <p class="OG-Name">The Rain Company</p> 
-    <!--LeadedSquare-->
-    <div class="TopSquare"></div>   
-     <!--LeadButtonOption-->
-    <button id="OptionsButton" class="Options-Buttton">
-        <span></span><span></span><span></span>
-    </button>
-    <!--Information panel-->
-    <div id="Panel" class="HidenPanel">
-        <h2>Information</h2>
-        <p class="Information">
-            Contáctame si deseas conocer más de algún proyecto
-            o conocer con más detalle mi trabajo.
-        </p>
-        <p class="Mail">calerayote@gmail.com</p>
-        <p class="Numer">+57 3188926351</p>
-    </div>   
-    <!--Arrows-->
-    <div id="Arrow" class="arrow">
-        <div class="arrow-top"></div>
-        <div class="arrow-bottom"></div>
-    </div>
-    <button id="DungeonButton" class="dungeonButton">
-        The infinity Dungeon
-    </button>
-    <!--DungeonInfoPanel-->
-    <div id="DungeonPanel" class="dungeonPanel">
-        <div class="Content">
-            <h2 class="Title">Dungeon Infinity</h2>
-            <p class="InfoGame">
-                "The Infinity Dungeon" es un videojuego que desarrollé como proyecto final, 
-                y aunque fue bien recibido, hoy lo veo como un recuerdo valioso de mi primer 
-                trabajo en solitario. Comparado con las habilidades que he adquirido desde entonces, 
-                representa el punto de partida de mi evolución como desarrollador.
+<body>
+  <div id="background-container"></div>
+  <div id="panels-container"></div>
+  
+  <p class="OG-Name">The Rain Company</p>
+  <div class="TopSquare"></div>
 
-                El objetivo del juego es simple: sobrevivir el mayor tiempo posible mientras mejoras 
-                tus armas y armaduras. Está fuertemente inspirado en títulos como Vampire Survivors y 
-                Blasphemous, así como en otros juegos del género horda con elementos de RPG.
+  <button id="OptionsButton" class="Options-Button">
+    <span></span><span></span><span></span>
+  </button>
 
-                Una de sus principales fortalezas radica en la sencillez de sus mecánicas, combinada 
-                con múltiples interacciones que mantienen la experiencia fresca y entretenida. 
-                A pesar de su simplicidad, The Infinity Dungeon logra captar la atención del jugador 
-                gracias a su dinamismo y ritmo constante.
-            </p>
-        <!--Album-->
-        <div class="Album">
-            <img src="Image/1.png" alt="">
-            <img src="Image/2.png" alt="">
-            <img src="Image/3.png" alt="">
-            <iframe width="900" height="506" 
-                src="https://www.youtube.com/embed/keJhZo0kxKk" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>       
-            <video src="Image/8.mp4" controls></video>
-            <iframe width="900" height="506" 
-                src="https://www.youtube.com/embed/dDKNm5aKIhQ" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe> 
-            <video src="Image/11.mp4" controls></video>  
-            <video src="Image/12.mp4" controls></video>  
-            <img src="Image/13.png" alt="">
-        </div>
-        <!--ClosedButton-->
-        <button id="Close" class="hidenButton">Back</button>
-        </div>
-        <script>
-            const DungeonButton = document.getElementById("DungeonButton");
-            const DungeonPanel = document.getElementById("DungeonPanel");
-            const Close = document.getElementById("Close");
-            const Arrow =document.getElementById("Arrow");
+  <div id="Arrow" class="arrow">
+    <div class="arrow-top"></div>
+    <div class="arrow-bottom"></div>
+  </div>
+  <div id="Panel" class="HidenPanel">
+    <h2>Información</h2>
+    <p class="Information">
+      Contáctame si deseas conocer más de algún proyecto o con más detalle mi trabajo.
+    </p>
+    <p class="Mail">calerayote@gmail.com</p>    
+    <p class="Numer">+57 3188926351</p>
+  </div>
 
-            DungeonButton.addEventListener("click",()=>{
-                DungeonPanel.classList.add("activo");
-                DungeonButton.style.display = "none";
-                Arrow.classList.add("Close");
-                DungeonPanel.scrollTop = 0;
-            });
-
-            DungeonPanel.addEventListener("scroll",()=>{
-                const scrollBotton = DungeonPanel.scrollHeight- DungeonPanel.scrollTop === DungeonPanel.clientHeight;
-                if(scrollBotton){
-                    DungeonPanel.classList.add("mostrar-close");
-                }
-            });
-
-            Close.addEventListener("click", () => {
-                DungeonPanel.classList.remove("activo", "mostrar-close");
-             setTimeout(() => {
-                DungeonButton.style.display = "block";
-                Arrow.classList.remove("Close");
-            }, 700);
-            });
-        </script>
-    </div>  
-    <!--FishiLife-->
-    <div id="FishiLife">
-        <button id="FishiLifeButton" class="fishiLifeButton">
-            Fishing Life
-        </button>
-    </div>
-    <!--FishigPanel-->
-    <div id="FishingPanel" class="fishnigPanel">
-        <div class="ContentFishing">
-            <h2 class="TitleFish">Fishing Life</h2>
-            <p class="InfoFishingGame">
-                Fishing Life fue concebido como una propuesta 
-                lúdica con un trasfondo crítico. Su diseño parte 
-                de una mecánica de recolección en la que, en lugar 
-                de peces, el jugador captura residuos presentes en el océano. 
-                Esta dinámica busca visibilizar el impacto ambiental del desecho humano. 
-                A nivel de gameplay, la acción se recompensa con monedas, introduciendo un 
-                matiz irónico que refuerza el mensaje ecológico subyacente.
-            </p>
-        </div>
-        <!--Carousel-->
-        <div class="carousel-Track">
-            <!--Album-->
-            <div class="AlbumFishing">
-                <img src="Image/FishGame/1.png" alt="">
-                <img src="Image/FishGame/2.png" alt="">
-                <img src="Image/FishGame/3.png" alt="">
-                <img src="Image/FishGame/4.png" alt="">                
-                <img src="Image/FishGame/5.png" alt="">                
-                <img src="Image/FishGame/6.png" alt="">
-                <img src="Image/FishGame/7.png" alt="">
-                <img src="Image/FishGame/8.png" alt="">
-                <img src="Image/FishGame/9.png" alt="">                
-                <img src="Image/FishGame/10.png" alt="">                
-                <img src="Image/FishGame/11.png" alt="">
-                <img src="Image/FishGame/12.png" alt="">
-            </div> 
-        </div>    
-        <!--ClosedButton-->
-        <button id="CloseFishing" class="hidenFishingButton">Back</button>
-        <div>
-            <script>
-                const FishiLifeButton = document.getElementById("FishiLifeButton");
-                const FishingPanel = document.getElementById("FishingPanel");
-                const CloseFishing = document.getElementById("CloseFishing");
-
-                FishiLifeButton.addEventListener("click",()=>{
-                    FishingPanel.classList.add("activo");
-                    FishiLifeButton.style.display = "none";
-                    Arrow.classList.add("Close");
-                    FishingPanel.scrollTop = 0;
-                });
-
-                FishingPanel.addEventListener("scroll",()=>{
-                    const scrollBotton = FishingPanel.scrollHeight- FishingPanel.scrollTop === FishingPanel.clientHeight;
-                    if(scrollBotton){
-                        FishingPanel.classList.add("mostrar-close");
-                    }
-                });
-
-                CloseFishing.addEventListener("click", () => {
-                    FishingPanel.classList.remove("activo", "mostrar-close");
-                 setTimeout(() => {
-                    FishiLifeButton.style.display = "block";
-                    Arrow.classList.remove("Close");
-                }, 700);
-                });
-            </script>
-        </div>
-    </div>
-    <!--OpctionPanel-->
-    <script>
-        const boton = document.getElementById('OptionsButton');
-        const panel = document.getElementById('Panel');
-
-        boton.addEventListener('click', () => {
-            panel.classList.toggle('activo');
-        });
-    </script>
-    <!--BackGround-->
-    <div class="BackGround">
-        <script>
-            window.onload = function () {
-            const videoList = [
-                "Videos/45.mp4",
-                "Image/FishGame/A.png",
-            ];
-
-            let currentIndex = 0;
-            let isTransitioning = false;
-
-            const videoA = document.getElementById("VideoA");
-            const videoB = document.getElementById("VideoB");
-            const imageElement = document.getElementById("imageElement");
-            const ArrowRight = document.getElementById("Arrow");
-
-            let currentVideo = videoA;
-            let nextVideo = videoB;
-
-            function isVideo(file) {
-                return file.endsWith(".mp4") || file.endsWith(".webm");
-            }
-
-            function updateButtons(index) {
-                document.getElementById("DungeonButton").style.display = "none";
-                document.getElementById("FishiLifeButton").style.display = "none";
-
-                if (index === 0) {
-                    document.getElementById("DungeonButton").style.display = "block";
-                } else if (index === 1) {
-                    document.getElementById("FishiLifeButton").style.display = "block";
-                }
-            }
-
-            function updateMedia(index) {
-                const src = videoList[index];
-
-                // Reset visibility
-                videoA.style.display = "none";
-                videoB.style.display = "none";
-                imageElement.style.display = "none";
-
-                // Reset classes
-                videoA.className = "Bg-video";
-                videoB.className = "Bg-video next";
-                imageElement.className = "";
-
-                if (isVideo(src)) {
-                    currentVideo = videoA;
-                    nextVideo = videoB;
-
-                    currentVideo.src = src;
-                    currentVideo.load();
-                    currentVideo.play();
-                    currentVideo.style.display = "block";
-                } else {
-                    imageElement.src = src;
-                    imageElement.classList.add("slide-image");
-                    imageElement.style.display = "block";
-
-                    videoA.pause();
-                    videoB.pause();
-                }
-
-                updateButtons(index);
-            }
-
-           function switchVideo(direction) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-
-                if (direction === 'next') {
-                    currentIndex = (currentIndex + 1) % videoList.length;
-                } else if (direction === 'prev') {
-                    currentIndex = (currentIndex - 1 + videoList.length) % videoList.length;
-                }
-            
-                const src = videoList[currentIndex];
-                updateButtons(currentIndex);
-            
-                // Si es imagen: mostrar con animación, ocultar videos
-                if (!isVideo(src)) {
-                    videoA.pause();
-                    videoB.pause();
-                    videoA.style.display = "none";
-                    videoB.style.display = "none";
-                
-                    imageElement.src = src;
-                    imageElement.className = "slide-image";
-                    imageElement.style.display = "block";
-                
-                    isTransitioning = false;
-                    return;
-                }
-            
-                // Si es video: ocultar imagen y hacer transición
-                imageElement.style.display = "none";
-                imageElement.className = "";
-            
-                // Determinar cuál es el current y next correctamente
-                if (currentVideo === videoA) {
-                    currentVideo = videoA;
-                    nextVideo = videoB;
-                } else {
-                    currentVideo = videoB;
-                    nextVideo = videoA;
-                }
-            
-                nextVideo.src = src;
-                nextVideo.load();
-                nextVideo.play();
-            
-                nextVideo.style.display = "block";
-                nextVideo.style.transform = "translateX(0)";
-                nextVideo.style.opacity = "1";
-            
-                currentVideo.style.opacity = "0";
-            
-                setTimeout(() => {
-                    const temp = currentVideo;
-                    currentVideo = nextVideo;
-                    nextVideo = temp;
-                
-                    nextVideo.style.transform = "translateX(100%)";
-                    nextVideo.style.opacity = "0";
-                    nextVideo.style.display = "none";
-                
-                    isTransitioning = false;
-                }, 1000);
-            }
-            updateMedia(currentIndex);
-            ArrowRight.addEventListener("click", () => switchVideo("next"));
-        };
-    </script>
-    </div>
-    <!--BackGroundVideo-->
-    <div id="VideoBackGround">
-        <video id="VideoA" class="Bg-video" autoplay muted loop></video>
-        <video id="VideoB" class="Bg-video next" muted loop></video>
-        <img id="imageElement" alt="Background image" />
-    </div>
+  <script src="JS/main.js"></script>
+  <script src="JS/backgrounds.js"></script>
+  <script src="JS/panels.js"></script>
 </body>
 </html>

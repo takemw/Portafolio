@@ -1,90 +1,16 @@
-@font-face{
-    font-family: "EvilVampire";
-    src: url("Fonts/EvilVampire-Regular.ttf") format('truetype');
-    font-family: "FriendlySans";
-    src: url("Fonts/FriendlySans-Regular.ttf") format('truetype');
-    font-family: "Unageo";
-    src: url("Fonts/Unageo-Regular.ttf") format('truetype');
-}
-.TopSquare{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 500px;
-    width: 1439px;
-    height: 130px;
-    background-color: rgb(94, 93, 93);
-    opacity: 0.50;
-    z-index: 0;
-}
-.OG-Name{
-    position: relative;
-    color: rgb(255, 255, 255);    
-    text-align: left;
-    margin-left: 50px;
-    font-weight: bold;
-    margin-top: 45px;
-    font-size: 40px;
-    font-family: "EvilVampire";
-    z-index: 99;
-}
-.Options-Buttton{
-    display: flex;
-    width: 60px;
-    height: 50px;
-    position: absolute;
-    top: 50px;
-    right: 90px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;  
-    background-color: transparent;
-    border: none;
-    padding: 5px;
-    z-index: 99;
-}
-.Options-Buttton span {
-    width: 10;
-    height: 50px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);    
-    border-radius: 15px;
-}
-.HidenPanel{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transform-origin: center;
-    font-family: "FriendlySans";
-    background-color: #111111;
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(141, 179, 98, 0.5);
-    width: 500px;
-    text-align: center;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-    z-index: 99;
-}
-.HidenPanel.activo{
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
 .dungeonButton{
     position: absolute;
     cursor: pointer;
     top: 650px;
-    right: 620px;
+    right: 600px;
     display: inline-block;
-    padding: 15px 30px;
+    padding: 25px 50px;
     color: rgb(233, 233, 233);
     background-color: transparent;
     border: 2px solid rgb(206, 103, 247);
     text-decoration: none;
-    font-family: "EvilVampire";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 8px;
@@ -103,7 +29,6 @@
     background-color: #87c0f0;
     box-shadow: 0 0 10px #ee93b1, 0 0 20px #ec8bd4;
 }
-
 .dungeonPanel{
     position: fixed;
     top: 130px;
@@ -214,20 +139,21 @@
 }
 
 
+
 .fishiLifeButton{
-    position: absolute;
+   position: absolute;
     cursor: pointer;
-    top: 630px;
-    right: 620px;
+    top: 650px;
+    right: 600px;
     display: inline-block;
-    padding: 15px 60px;
+    padding: 25px 50px;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.452);
     border: 2px solid rgb(234, 247, 123);
     text-decoration: none;
-    font-family: "EvilVampire";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
     text-transform: uppercase;
-    font-size: 20px;
     font-weight: bold;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -245,7 +171,7 @@
     background-color: rgb(93, 223, 255);;
     box-shadow: 0 0 10px #ebee58, 0 0 20px #ffb546;
 }
-.fishnigPanel{
+.fishingPanel{
     position: fixed;
     top: 130px;
     bottom: 0;
@@ -266,10 +192,10 @@
     scrollbar-width: none;
     z-index: 20;
 }
-.fishnigPanel::-webkit-scrollbar{ 
+.fishingPanel::-webkit-scrollbar{ 
     display: none;
 }
-.fishnigPanel.activo{
+.fishingPanel.activo{
     transform: translateY(0);
     opacity: 1;
     z-index: 20;
@@ -372,122 +298,6 @@
 .CloseFishing:hover{
     background: #111111;
 }
-.fishnigPanel.mostrar-close .Close{
+.fishingPanel.mostrar-close .CloseFishing{
     display: block;
-}
-
-
-.Bg-video{
-    position: fixed;
-    width: 1990px;
-    top: 0;
-    right: 0;
-    bottom: 20px;
-    z-index: -1;
-    object-fit: cover;
-    transition: opacity 1s ease, transform 1s ease;
-}
-.Bg-video.next{
-    z-index: -1;
-    transform: translateX(100%);
-    opacity: 0;
-}
-#imageElement {
-   position: fixed;
-    width: 1450px;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    object-fit: cover;
-    transition: opacity 1s ease, transform 1s ease;
-}
-.slide-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    animation: slideIn 1s ease forwards;
-    opacity: 0;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-.arrow {
-  cursor: pointer;
-  height: 60px;
-  right: 1%;
-  position: absolute;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  transition: transform 0.1s;
-  width: 50px;
-}
-.arrow-top, .arrow-bottom {
-  background-color: #666;
-  height: 4px;
-  left: -5px;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-}
-
-.arrow-top:after, .arrow-bottom:after {
-  background-color: #ffffff;
-  content: "";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  transition: all 0.15s;
-}
-
-.arrow-top {
-  transform: rotate(45deg);
-  transform-origin: bottom right;
-}
-
-.arrow-top:after {
-  left: 100%;
-  right: 0;
-  transition-delay: 0s;
-}
-
-.arrow-bottom {
-  transform: rotate(-45deg);
-  transform-origin: top right;
-}
-
-.arrow-bottom:after {
-  left: 0;
-  right: 100%;
-  transition-delay: 0.15s;
-}
-
-.arrow:hover .arrow-top:after {
-  left: 0;
-  transition-delay: 0.15s;
-}
-
-.arrow:hover .arrow-bottom:after {
-  right: 0;
-  transition-delay: 0s;
-}
-
-.arrow:active {
-  transform: translateX(-50%) translateY(-50%) scale(0.9);
-}
-
-#DungeonButton, #FishiLifeButton{
-    display: none;
 }
