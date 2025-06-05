@@ -9,7 +9,7 @@ function loadHTML(url, containerId, callback) {
 
 window.addEventListener("DOMContentLoaded", () => {
   // Cargar el fondo
-  loadHTML("html/Background.html", "background-container", () => {
+  loadHTML("Html/Background.html", "background-container", () => {
   const script = document.createElement("script");
   script.src = "JS/backgrounds.js";
   script.onload = () => {

@@ -1,16 +1,15 @@
 .dungeonButton{
     position: absolute;
     cursor: pointer;
-    top: 650px;
-    right: 600px;
-    display: inline-block;
-    padding: 25px 50px;
+    top: 80vh;
+    right: 75vh;
+    padding: 1.5rem 3rem;
     color: rgb(233, 233, 233);
     background-color: transparent;
     border: 2px solid rgb(206, 103, 247);
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 8px;
@@ -31,12 +30,10 @@
 }
 .dungeonPanel{
     position: fixed;
-    top: 130px;
-    bottom: 0;
-    left: 100px;
-    right: 0;
-    width: 1200px;
-    height: 665px;
+    top: 118px;
+    left: 10%;
+    right: 10%;
+    height: 85vh;
     background: linear-gradient(to right, 
             rgba(250, 133, 221, 0.021) 0%, 
             rgba(171, 153, 175, 0.671) 5%, 
@@ -49,6 +46,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     z-index: 20;
+    padding: 1rem;
 }
 .dungeonPanel::-webkit-scrollbar{ 
     display: none;
@@ -62,39 +60,38 @@
     padding: 10px;  
 }
 .InfoGame{
-    font-size: 30px;
+    font-size: 1.5rem;
     color: black;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    margin-right: 100px ;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin: 2rem auto;
+    max-width: 90%;
 }
 .Title{
     color: black;
-    font-size: 50px;
+    font-size: 2.5rem;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    margin-right: 100px ;
-    margin-left: 100px;
-    margin-top: 100px;
+    margin: 3rem auto 1rem;
+    max-width: 90%;
 }
 .Album{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
     align-items: flex-start;
 }
 .Album img, .Album video{
-    width: 900px;
+    max-width: 100%;
+    width: 70vw;
     border-radius: 10px;
 }
 .Close{
-    margin-top: 40px;
+    margin-top: 2rem;
     background: #0ff;
     color: black;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -103,10 +100,8 @@
     display: none;
 }
 .hidenButton{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 40%;
-    padding: 20px 90px;
+    margin: 2rem auto;
+    padding: 1rem 5rem;
     color: rgb(233, 233, 233);
     background-color: transparent;
     border: 2px solid rgb(206, 103, 247);
@@ -119,6 +114,8 @@
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgb(133, 179, 179), 0 0 20px rgb(112, 156, 156);
     z-index: 5;
+    display: block;
+    text-align: center;
 }
 .hidenButton:hover{
     color: #fff;
@@ -141,18 +138,17 @@
 
 
 .fishiLifeButton{
-   position: absolute;
+    position: absolute;
     cursor: pointer;
-    top: 650px;
-    right: 600px;
-    display: inline-block;
-    padding: 25px 50px;
+    top: 80vh;
+    right: 75vh;
+    padding: 1.5rem 3rem;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.452);
     border: 2px solid rgb(234, 247, 123);
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 8px;
@@ -173,12 +169,10 @@
 }
 .fishingPanel{
     position: fixed;
-    top: 130px;
-    bottom: 0;
-    left: 100px;
-    right: 0;
-    width: 1200px;
-    height: 665px;
+    top: 118px;
+    left: 10%;
+    right: 10%;
+    height: 85vh;
     background: linear-gradient(to right, 
             rgba(175, 175, 175, 0.021) 0%, 
             rgba(109, 253, 205, 0.671) 5%, 
@@ -191,6 +185,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     z-index: 20;
+    padding: 1rem;
 }
 .fishingPanel::-webkit-scrollbar{ 
     display: none;
@@ -201,22 +196,20 @@
     z-index: 20;
 }
 .InfoFishingGame{
-    font-size: 30px;
+    font-size: 1.5rem;
     color: black;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    margin-right: 100px ;
-    margin-left: 100px;
-    margin-top: 50px;  
+    margin: 2rem auto;
+    max-width: 90%;
 }
 .TitleFish{
     color: black;
-    font-size: 50px;
+    font-size: 2.5rem;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    margin-right: 100px ;
-    margin-left: 100px;
-    margin-top: 100px;
+    margin: 3rem auto 1rem;
+    max-width: 90%;
 }
 .carousel-Track{
     margin-top: 50px;
@@ -255,10 +248,10 @@
     flex-shrink: 0;
 }
 .CloseFishing{
-    margin-top: 40px;
+    margin-top: 2rem;
     background: #0ff;
     color: black;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -267,10 +260,8 @@
     display: none;
 }
 .hidenFishingButton{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 40%;
-    padding: 20px 90px;
+    margin: 2rem auto;
+    padding: 1rem 5rem;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.452);
     border: 2px solid rgb(234, 247, 123);
@@ -283,6 +274,8 @@
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgb(182, 255, 153), 0 0 20px rgb(248, 207, 119);
     z-index: 5;
+    display: block;
+    text-align: center;
 }
 .hidenFishingButton:hover{
     color: #fff;

@@ -1,31 +1,32 @@
 @font-face{
     font-family: "EvilVampire";
-    src: url("/Fonts/EvilVampire-Regular.ttf") format('truetype');
+    src: url("../Fonts/EvilVampire-Regular.ttf");
 }
 .Bg-video{
     position: fixed;
-    width: 1990px;
     top: 0;
-    right: 0;
-    bottom: 20px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
     object-fit: cover;
     transition: opacity 1s ease, transform 1s ease;
+    pointer-events: none;
 }
-.Bg-video.next{
-    z-index: -1;
-    transform: translateX(100%);
+.Bg-video.next{    
     opacity: 0;
+    transform: translateX(100%);
 }
 #imageElement {
-   position: fixed;
-    width: 1450px;
-    top: -200px;
-    left: 0;
-    right: 0;
+    position: fixed;
+    width: 130vw;
+    height: 130vh;
+    top: -10vh;
+    left: -15vw;
     z-index: -1;
     object-fit: cover;
     transition: opacity 1s ease, transform 1s ease;
+    pointer-events: none;
 }
 .slide-image {
     position: fixed;
@@ -50,4 +51,21 @@
 }
 #DungeonButton, #FishiLifeButton{
     display: none;
+}
+/* RESPONSIVE PARA MÓVILES: CENTRAR IMAGEN BIEN EN VERTICAL */
+@media (max-width: 768px) {
+  #imageElement {
+    top: -5vh;
+    left: -10vw;
+    width: 150vw;
+    height: 140vh;
+  }
+
+  .Bg-video {
+    object-position: center center;
+  }
+
+  .slide-image {
+    object-position: center center;
+  }
 }
