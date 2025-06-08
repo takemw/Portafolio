@@ -1,5 +1,5 @@
 function initBackgroundVideos() {
-  const videoList = ["Videos/45.mp4", "Image/FishGame/A.PNG"];
+  const videoList = ["Videos/45.mp4", "Videos/A.PNG","Videos/15.mp4" ];
   let currentIndex = 0;
   let isTransitioning = false;
 

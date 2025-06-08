@@ -294,3 +294,140 @@
 .fishingPanel.mostrar-close .CloseFishing{
     display: block;
 }
+
+.magicAlchemistButton{
+    position: absolute;
+    cursor: pointer;
+    top: 80vh;
+    right: 75vh;
+    padding: 1.5rem 3rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.452);
+    border: 2px solid rgb(240, 104, 172);
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(255, 118, 118), 0 0 20px rgb(184, 108, 133);
+    z-index: 5;
+}
+.magicAlchemistButton:hover{
+    color: #fff;
+    background-color: rgb(255, 149, 211);
+    box-shadow: 0 0 20px rgb(238, 90, 201), 0 0 40px rgb(98, 156, 231);
+    transform: scale(1.05);
+}
+.magicAlchemistButton:active{
+    transform: scale(0.95);
+    background-color: rgb(93, 223, 255);;
+    box-shadow: 0 0 10px #ee587e, 0 0 20px #e65b85;
+}
+.magicPanel{
+    position: fixed;
+    top: 118px;
+    left: 10%;
+    right: 10%;
+    height: 85vh;
+    background: linear-gradient(to right, 
+            rgba(175, 175, 175, 0.021) 0%, 
+            rgba(205, 117, 255, 0.671) 5%, 
+            rgba(205, 117, 255, 0.671) 95%, 
+            rgba(175, 175, 175, 0.021) 100%);
+    color: white;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    overflow-y: auto;
+    scrollbar-width: none;
+    z-index: 20;
+    padding: 1rem;
+}
+.magicPanel::-webkit-scrollbar{ 
+    display: none;
+}
+.magicPanel.activo{
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 20;
+}
+.InfoMagic{
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 2rem auto;
+    max-width: 90%;
+}
+.TitleMagic{
+    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 3rem auto 1rem;
+    max-width: 90%;
+}
+.CloseMagic{
+    margin-top: 2rem;
+    background: #0ff;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    display: none;
+}
+.CloseMagic:hover{
+    background: #111111;
+}
+.hidenMagic{
+    margin: 2rem auto;
+    padding: 1rem 5rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.452);
+    border: 2px solid rgb(240, 104, 172);
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(255, 118, 118), 0 0 20px rgb(184, 108, 133);
+    z-index: 5;
+    display: block;
+    text-align: center;
+}
+.hidenMagic:hover{
+    color: #fff;
+    background-color: rgb(255, 149, 211);
+    box-shadow: 0 0 20px rgb(238, 90, 201), 0 0 40px rgb(98, 156, 231);
+    transform: scale(1.05);
+}
+.hidenMagic:active{
+    transform: scale(0.95);
+    background-color: rgb(93, 223, 255);;
+    box-shadow: 0 0 10px #ee6cff, 0 0 20px #62edff;
+}
+.AlbumMagic{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.AlbumMagic img, .AlbumMagic video{
+    max-width: 100%;
+    width: 70vw;
+    border-radius: 10px;
+}
+.magicPanel.mostrar-close .CloseMagic{
+    display: block;
+}
+.magicAlchemistButton{
+    display: none;
+}
